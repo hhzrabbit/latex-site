@@ -1,0 +1,126 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+
+\title{Some Humongous Learnination: An Intro to LaTeX}
+\author{Jordan Chan, Haley Zeng, and Stephanie Yoon\\(Junior High School)}
+\date{March 2017}
+
+\begin{document}
+
+\maketitle
+
+\section{What is LaTeX?}
+LaTeX (pronounced Lah-tech or Lay-tech, kinda rhymes with Platek) is a document preparation/markup software that runs on top of TeX, which is a typesetting language made specifically for the production of scientific and technical documents. TeX was created by Donald Knuth (pronounced Kanooth).
+
+Additionally, a big part of the purpose of LaTeX is the aesthetic -- in word processors (like Microsoft Word) the author would be responsible for choosing the layout; this results in many poorly designed documents. The solution for this problem is LaTeX, which takes care of document design for you -- as you can see with this introduction, it's very aesthetic.
+
+\section{How you'll use it}
+For this lesson you'll be using Overleaf, which is an online LaTeX collaborative writing and publishing tool. You can work with a partner, or individually, to complete the exercise described in Section 6. You can use the demo template also included in this lesson's repository. Feel free to refer to our guide in Section 3 and the resources in Section 4.
+
+\section{The basics}
+\subsection{The structure of a LaTeX input file}
+An input file should have the following basic structure:
+\begin{verbatim}
+\documentclass[<OPTIONS>]{<CLASS>}
+<PREAMBLE>
+\begin{document}
+<CONTENT>
+\end{document}
+\end{verbatim}
+The class is the type of document you're creating -- an article, report, book, letter, etc. You could also specify things like base font size, paper size, etc to customize the behavior of the document class. For example,
+\begin{verbatim}
+\documentclass[11pt,a4paper]{article}
+\end{verbatim}
+instructs LaTeX to typeset the document as an article with 11pt base font size, for A4 size paper.
+
+The preamble is important because it contains commands that affect the entire document. It often includes things like packages and top matter (the title, the authors, the date, etc.) To typeset the top matter, one uses the command \verb+\maketitle+ right after \verb+\begin{document}+. 
+
+The rest of your file will be the content of your document! More on that in the following subsections...
+
+\subsection{Commands}
+LaTeX typesetting uses commands, or tags, to determine the formatting of the document. Commands usually start with a backslash and sometimes have parameters. Some commands have mandatory parameters that are written inside curly braces; some commands have optional parameters that are written inside brackets. 
+
+You can also define your own commands! To do this, use this:
+\begin{verbatim}
+\newcommand{\<COMMANDNAME>}{<DEFINITION>}
+\end{verbatim}
+If you want to overwrite a pre-existing command, use this:
+\begin{verbatim}
+\renewcommand{...}{...}
+\end{verbatim}
+Pretty simple, no?
+
+\subsection{Environments}
+Environments are used to format blocks of text in a LaTeX documents. They are delimited by the commands \verb+\begin{...}+ and \verb+\end{...}+. Here is a simple example:
+\begin{verbatim}
+\begin{center}
+Wow isn't this nice?
+\end{center}
+\end{verbatim}
+The result is the following:
+
+\begin{center}
+Wow isn't this nice?
+\end{center}
+In fact, the \verb+verbatim+ environment was used to show you that example.
+
+You may also want to define your own environments, which you can do as follows:
+\begin{verbatim}
+\newenvironment{<NAME>}{<BEFORE>}{<AFTER>}
+\end{verbatim}
+The \verb+<BEFORE>+ defines what the environment will do before the text within, such as \verb+\begin{center}+, and the \verb+<AFTER>+ defines what the environment will do after, such as \verb+\end{center}+.
+
+\subsection{Packages}
+Packages are used to add features that aren't included in basic LaTeX. To use a package, you simply use the command 
+\begin{verbatim}
+\usepackage[<OPTIONS>]{<PACKAGE>}
+\end{verbatim}
+You should put the packages to use in the preamble.
+
+A simple example of a package is \verb+\usepackage{color}+, which allows you to typeset in colors!
+
+Also, a very important set of packages created by the American Mathematical Society, includes \verb+\usepackage{amsmath}+ (which defines extra environments for multiline displayed equations, as well as a number of other enhancements for math), \verb+\usepackage{amssymb}+ (which provides a bunch of symbols), and \verb+\usepackage{amsthm}+ (provides the \verb+proof+ environment and the \verb+\newtheorem+ command). A package you will need for the activity is the \verb+graphicx+ package, used to import images.
+
+\subsection{More useful things to know}
+\begin{enumerate}
+\item{Math}
+	\begin{itemize}
+    \item{LaTeX supports formatting for mathematical symbols and equations. In a LaTeX document, you must declare one of two math modes in order to utilize math commands.}
+    \item{In-line math mode is delimited by a singular dollar sign on either side. For example: \verb!$x^3 + \sqrt{4y^2} = 17$! generates $x^3+\sqrt{4y^2} = 17$, which is rendered in-line with the text}
+    \item{Display math mode is delimited by escaped brackets, \verb+\[+ and \verb+\]+. For example, \verb!\[x^3 + \sqrt{4y^2} = 17\]! generates \[ x^3 + \sqrt{4y^2} = 17 \] which is rendered on its own line.}
+    \item{Useful syntax for the activity:}
+    	\begin{itemize}
+    	\item{\verb+lim_{lower}+ limit symbol}
+        \item{\verb+\to+ arrow}
+        \item{\verb+\infty+ infinity symbol}
+        \item{\verb+\int_{lower}^{upper}+ integral symbol}
+        \item{\verb+frac{numerator}{denominator}+ fraction}
+    	\end{itemize}
+    \end{itemize}
+\item{Comments}
+	\begin{itemize}
+	\item{In TeX, anything following a \% sign in a line is commented out.} %wow look an example!
+    \item{If you want to use the \% sign, or a $\backslash$, or a \$, or \{ \}, then you'd need to use 			escape sequences because all of these symbols have meaning in TeX.}
+	\end{itemize}
+\item{White space}
+	\begin{itemize}
+	\item{White space in your source file will have meaning! A blank line in between text will start a  		new paragraph.}
+    \item{What if you want to have a custom indent size? An alternative to a blank line is the command 			\verb+\par+. In the preamble you can set the indent size using \verb+\setlength{\parindent}{<NUMBER>em}+}.
+	\end{itemize}
+\end{enumerate}
+
+\section{Other resources}
+We've created this guide for you, but The LaTeX Project provides a lot of information on their website, as well as their user guide, which you can view as a .pdf or as a .tex.
+
+The LaTeX Project also includes information about how to install LaTeX, so that in the future you don't have to use Overleaf or ShareLaTeX (which, by the way, is also a great resource for looking up how to do things) -- instead, you'd be able to use any text editor (like emacs, which has a LaTeX mode) and then compile locally.
+
+\section{One final note before you begin...}
+This guide clearly didn't show you how to do everything in LaTeX -- otherwise it would be a million pages long! Fluency in LaTeX takes both the exploration of the interwebs and practice. But, hopefully, this guide does help you gain some footing so that when you start working, you won't be completely lost. :)
+
+\section{Exercise}
+You're a teaching assistant for your math professor, who has tasked you with writing up the final exam in LaTeX!
+
+In this exercise, try to recreate as much as you can of the document called Final.pdf, also in the repository. 
+
+\end{document}
