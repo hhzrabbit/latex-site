@@ -5,30 +5,37 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   </head>
   <body>
 
-
-    <div class="container-fluid" height="100vh">
+    <div class="container-fluid">
       
       <h1>An Introduction to LaTeX</h1>
-      <h2>A Brief Introduction</h2>
 
       <ul class="nav nav-tabs">
-	<li class="active"><a data-toggle="tab" href="#lesson-output">Output (PDF)</a></li>
-	<li><a data-toggle="tab" href="#lesson-source">Source (LaTeX)</a></li>
+	<li class="active"><a data-toggle="tab" href="#lesson-output">Lesson (PDF)</a></li>
+	<li><a data-toggle="tab" href="#lesson-source">Lesson Source (LaTeX)</a></li>
 	<li><a data-toggle="tab" href="#activity">Activity</a></li>
       </ul>
 
-      <div class="tab-content" height="100vh">
+      <div class="tab-content">
 	<div id="lesson-output" class="tab-pane fade in active">
-	  <object width="80%" height="100vh" data="lesson.pdf"></object>
+	  <p class="lead">Below is a guide to the basics of LaTeX. The lesson itself is written in LaTex. The source LaTeX code is available in the Lesson Source tab.</p>
+	  <hr>
+	  <object width="100%" height="800px" data="lesson.pdf"></object>
 	</div>
 	<div id="lesson-source" class="tab-pane fade">
-	  <object width="80%" height="100vh" data="main.tex"></object>
+	  <p class="lead">Below is the LaTeX source code for the lesson found on the Lesson tab. This code can be used as a reference for how to write a LaTeX file.</p>
+	  <hr>
+	  <object width="100%" height="800px" data="main.tex"></object>
 	</div>
 	<div id="activity" class="tab-pane fade">
-	  <object width="80%" height="100vh" data="activity.pdf"></object>
+	  <p class="lead">Ready to put your LaTeX skills to the test? Try this activity!</p>
+	  <p>You are a teaching assistant for your calculus professor. The professor asks you to write up the final exam. Recreate the final exam seen below.</p>
+	  <p>It may be easiest to use an online LaTeX code editor to try this activity. Several platforms exist such as <a href="https://www.sharelatex.com/">Share LaTeX</a> and <a href="https://www.overleaf.com/">Overleaf</a> that allow you to write LaTeX code and render its output side by side.</p>
+	  <hr>
+	  <object width="100%" height="800px" data="activity.pdf"></object>
 	</div>
       </div>
       
