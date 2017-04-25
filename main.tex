@@ -1,6 +1,11 @@
 \documentclass{article}
 \usepackage[utf8]{inputenc}
 \usepackage{amsmath}
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    urlcolor=blue,
+}
 
 \title{Some Humongous Learnination: An Intro to LaTeX}
 \author{Jordan Chan, Haley Zeng, and Stephanie Yoon\\(Junior High School)}
@@ -15,8 +20,14 @@ LaTeX (pronounced Lah-tech or Lay-tech, kinda rhymes with Platek) is a document 
 
 Additionally, a big part of the purpose of LaTeX is the aesthetic -- in word processors (like Microsoft Word) the author would be responsible for choosing the layout; this results in many poorly designed documents. The solution for this problem is LaTeX, which takes care of document design for you -- as you can see with this introduction, it's very aesthetic.
 
-\section{How you'll use it}
-For this lesson you'll be using Overleaf, which is an online LaTeX collaborative writing and publishing tool. You can work with a partner, or individually, to complete the exercise described in Section 6. You can use the demo template also included in this lesson's repository. Feel free to refer to our guide in Section 3 and the resources in Section 4.
+\section{Using LaTeX}
+There are several distributions of TeX that are free to download. The recommended distribution depends on the operating system of your computer.
+\begin{itemize}
+\item{Windows: \href{https://miktex.org/download}{MikTeX} }
+\item{Mac: \href{http://www.tug.org/mactex/mactex-download.html}{MacTeX}}
+\item{Unix: \href{http://www.tug.org/texlive/quickinstall.html}{TeX Live} }
+\end{itemize}
+Alternatively, if you are only looking to try LaTeX without downloading software, you may use an online LaTeX editor, such as \href{https://www.overleaf.com/}{Overleaf} or \href{https://www.sharelatex.com/}{ShareLaTeX}.
 
 \section{The basics}
 \subsection{The structure of a LaTeX input file}
@@ -111,16 +122,18 @@ Also, a very important set of packages created by the American Mathematical Soci
 \end{enumerate}
 
 \section{Other resources}
-We've created this guide for you, but The LaTeX Project provides a lot of information on their website, as well as their user guide, which you can view as a .pdf or as a .tex.
+We've created this guide for you, but \href{https://www.latex-project.org/}{The LaTeX Project} provides a lot of information on their website, as well as their user guide, which you can view as a .pdf or as a .tex.
 
 The LaTeX Project also includes information about how to install LaTeX, so that in the future you don't have to use Overleaf or ShareLaTeX (which, by the way, is also a great resource for looking up how to do things) -- instead, you'd be able to use any text editor (like emacs, which has a LaTeX mode) and then compile locally.
 
-\section{One final note before you begin...}
+\section{One final note..}
 This guide clearly didn't show you how to do everything in LaTeX -- otherwise it would be a million pages long! Fluency in LaTeX takes both the exploration of the interwebs and practice. But, hopefully, this guide does help you gain some footing so that when you start working, you won't be completely lost. :)
 
 \section{Exercise}
+Now let's put your new knowledge to the test!
+
 You're a teaching assistant for your math professor, who has tasked you with writing up the final exam in LaTeX!
 
-In this exercise, try to recreate as much as you can of the document called Final.pdf, also in the repository. 
+In this exercise, try to recreate as much as you can of the document found in the Activity tab. Feel free to refer to this guide and the LaTeX source code of this guide to help you.
 
 \end{document}
